@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+        }
+        .loginForm{
+            margin-top: 15%;
+        }
+        .form-group{
+            width: 30%;
+        }
+        .inputArea{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .signInButton{
+            padding: 0px !important;
+            font-size: 0.75rem !important;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> <!-- load bulma css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<!--<form action="/loginAuth" method="post">-->
+<!--    <label for="username">Username:</label><br>-->
+<!--    <input type="text" id="username" name="username" ><br>-->
+<!--    <label for="password">Password:</label><br>-->
+<!--    <input type="password" id="password" name="password"><br><br>-->
+<!--    <input type="submit" value="Submit">-->
+<!--</form>-->
+<div class=" jumbotron container">
+<form class="loginForm" action="/loginAuth" method="post">
+<div class="inputArea">
+    <h5>SIGN IN</h5>
+    <div class="form-group">
+        <label for="emailID">Email Id</label>
+        <input type="text" id="emailID" name="emailID" class="form-control"  aria-describedby="emailHelp" placeholder="Enter Email Id">
+        <!--        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Enter Password">
+    </div>
+</div>
+<div class="d-flex justify-content-center">
+    <label class="form-check-label" >{{if .}}
+        {{.}}
+        {{end}}</label>
+</div>
+<div class="d-flex justify-content-center">
+    <small id="emailHelp" class="form-text text-muted">No account? <span><a type="button" href="/register" class="btn btn-link signInButton">Create one</a></span> </small>
+</div>
+<div class="d-flex justify-content-center">
+    <input type="submit" class="btn btn-primary " value="Submit">
+</div>
+
+</form>
+</div>
+
+<br><br>
+
+</body>
+</html>
